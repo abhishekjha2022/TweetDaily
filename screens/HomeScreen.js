@@ -2,6 +2,7 @@ import {View, Text} from 'react-native';
 import React, {useContext, useState} from 'react';
 import ColorTheme from '../components/ColorTheme';
 import ColorThemeContext from '../app/context/ColorThemeContext';
+import FeedScreen from './FeedScreen';
 
 const HomeScreen = () => {
   const {isDarkEnabled} = useContext(ColorThemeContext);
@@ -14,9 +15,7 @@ const HomeScreen = () => {
         alignItems: 'center',
       }}>
       <ColorTheme />
-      <Text style={{color: isDarkEnabled ? 'darkgrey' : 'black'}}>
-        Hello There
-      </Text>
+      <FeedScreen />
     </View>
   );
 };

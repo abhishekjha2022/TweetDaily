@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
 import HomeScreen from './screens/HomeScreen';
 import ColorThemeContext from './app/context/ColorThemeContext';
 
