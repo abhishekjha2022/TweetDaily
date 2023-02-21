@@ -1,10 +1,11 @@
 import React from 'react';
-import {Text, View} from 'react-native/types';
+import {Text, View} from 'react-native';
 
-const TweetContainer = () => {
+const TweetContainer = ({item}) => {
+  console.log(item);
   return (
     <View>
-      <Text>This is Tweet Container</Text>
+      <Text>{item.name}</Text>
     </View>
   );
 };
