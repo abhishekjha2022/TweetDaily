@@ -39,7 +39,13 @@ const Header = ({profileImage, name}) => {
           <ColorTheme />
         </View>
       </SafeAreaView>
-      <View style={{height: 1, width: '100%', backgroundColor: 'grey'}}></View>
+      <View
+        style={{
+          height: 0.5,
+          width: '100%',
+          backgroundColor: 'lightgrey',
+          marginBottom: 10,
+        }}></View>
     </>
   );
 };

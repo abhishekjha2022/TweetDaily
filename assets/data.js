@@ -14,7 +14,9 @@ export const data = [
       {
         tweetId: '1',
         tweetDate: '09-10-2022',
-        content: 'This is my first in TweetDaily Application',
+        content:
+          'This is my first in TweetDaily Application.Lets make this build awesome!',
+        impression: '21',
         likesBy: [
           {
             userId: '2',
@@ -81,7 +83,78 @@ export const data = [
               'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
           },
         ],
+      },
+      {
+        tweetId: '2',
+        tweetDate: '09-10-2022',
+        content: 'This is my second in TweetDaily Application',
         impression: '21',
+        likesBy: [
+          {
+            userId: '2',
+            name: 'Robin',
+            userName: '@robin',
+            profileDescription:
+              'I tweet about software development best practices',
+            profileImage:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
+            coverImage:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
+          },
+          {
+            userId: '3',
+            name: 'Binod',
+            userName: '@binod',
+            profileDescription: 'Just a random guy loves to eat chocolates',
+            profileImage:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
+            coverImage:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
+          },
+          {
+            userId: '4',
+            name: 'Prabesh',
+            userName: '@prabesh',
+            profileDescription: 'Share about investment on share markets',
+            profileImage:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
+            coverImage:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
+          },
+        ],
+        commentsBy: [
+          {
+            userId: '2',
+            name: 'Robin',
+            userName: '@robin',
+            profileDescription:
+              'I tweet about software development best practices',
+            profileImage:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
+            coverImage:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
+          },
+          {
+            userId: '3',
+            name: 'Binod',
+            userName: '@binod',
+            profileDescription: 'Just a random guy loves to eat chocolates',
+            profileImage:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
+            coverImage:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
+          },
+          {
+            userId: '4',
+            name: 'Prabesh',
+            userName: '@prabesh',
+            profileDescription: 'Share about investment on share markets',
+            profileImage:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
+            coverImage:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
+          },
+        ],
       },
     ],
     myFollowers: [
@@ -152,6 +225,7 @@ export const data = [
   {
     userId: '2',
     name: 'Robin',
+    userName: '@robin',
     profileImage:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
     coverImage:
@@ -228,6 +302,7 @@ export const data = [
               'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlgsycxGQ33pTbY0962te9tYTEHQofrfXEOoigLp5fkuwQ1t-Itnj04izxTAS2V9unk-4&usqp=CAU',
           },
         ],
+
         impression: '21',
       },
     ],

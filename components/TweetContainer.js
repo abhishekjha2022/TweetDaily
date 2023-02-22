@@ -1,12 +1,24 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {FlatList, View} from 'react-native';
+import SingleTweet from './SingleTweet';
 
 const TweetContainer = ({item}) => {
-  console.log(item);
+  const {profileImage, name, userName, myTweets} = item;
   return (
-    <View>
-      <Text>{item.name}</Text>
-    </View>
+    <FlatList
+      data={myTweets}
+      keyExtractor={myTweets => myTweets.tweetId}
+      renderItem={({item}) => (
+        <SingleTweet
+          item={item}
+          profileImage={profileImage}
+          name={name}
+          userName={userName}
+        />
+      )}
+      
+    />
+    
   );
 };
 
