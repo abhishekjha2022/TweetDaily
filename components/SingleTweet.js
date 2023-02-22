@@ -2,11 +2,13 @@ import React, {useContext} from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import ColorThemeContext from '../app/context/ColorThemeContext';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {useNavigation} from '@react-navigation/native';
 
 const SingleTweet = ({item, profileImage, name, userName}) => {
   const {isDarkEnabled} = useContext(ColorThemeContext);
+  const {navigate} = useNavigation();
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => navigate('TweetDetailScreen', item)}>
       <View
         style={{
           paddingLeft: 10,
