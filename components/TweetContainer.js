@@ -16,9 +16,7 @@ const TweetContainer = ({item}) => {
           userName={userName}
         />
       )}
-      
     />
-    
   );
 };
 
