@@ -16,6 +16,8 @@ export const data = [
         tweetDate: '09-10-2022',
         content:
           'This is my first in TweetDaily Application.Lets make this build awesome!',
+        uploadedImage:
+          'https://thumbs.dreamstime.com/b/professional-development-programmer-working-programming-website-software-coding-technology-writing-codes-data-code-132331729.jpg',
         impression: '21',
         likesBy: [
           {

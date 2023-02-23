@@ -1,5 +1,12 @@
 import React, {useContext} from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  TouchableHighlight,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import ColorThemeContext from '../app/context/ColorThemeContext';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useNavigation} from '@react-navigation/native';
@@ -8,7 +15,7 @@ const SingleTweet = ({item, profileImage, name, userName}) => {
   const {isDarkEnabled} = useContext(ColorThemeContext);
   const {navigate} = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigate('TweetDetailScreen', item)}>
+    <TouchableOpacity onPress={() => navigate('Tweet', item)}>
       <View
         style={{
           paddingLeft: 10,
@@ -42,6 +49,27 @@ const SingleTweet = ({item, profileImage, name, userName}) => {
           <Text style={{color: isDarkEnabled ? 'grey' : '#000'}}>
             {item.content}
           </Text>
+          <TouchableOpacity
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginRight: 50,
+              marginTop: 5,
+            }}>
+            {item.uploadedImage && (
+              <Image
+                source={{uri: item.uploadedImage}}
+                style={{
+                  height: 150,
+                  width: '100%',
+                  borderRadius: 5,
+                  overflow: 'hidden',
+                }}
+              />
+            )}
+          </TouchableOpacity>
+
           <View
             style={{
               marginTop: 20,
@@ -62,7 +90,7 @@ const SingleTweet = ({item, profileImage, name, userName}) => {
                 style={{color: 'darkgrey'}}
               />
               <Text style={{fontSize: 13, marginLeft: 3, color: 'darkgrey'}}>
-                {item.likesBy.length}
+                {item.commentsBy.length}
               </Text>
             </TouchableOpacity>
             <TouchableOpacity style={{flexDirection: 'row'}}>
@@ -83,7 +111,7 @@ const SingleTweet = ({item, profileImage, name, userName}) => {
                   marginLeft: 3,
                   color: isDarkEnabled ? 'darkgrey' : 'black',
                 }}>
-                {item.likesBy.length}
+                {item.impression}
               </Text>
             </View>
           </View>

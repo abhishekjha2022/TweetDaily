@@ -15,12 +15,20 @@ const FeedScreenNavigator = () => {
     <Stack.Navigator
       screenOptions={{
         cardStyle: {backgroundColor: isDarkEnabled ? '#000' : '#fff'},
+        headerStyle: {backgroundColor: isDarkEnabled ? '#000' : '#fff'},
+        headerTitleStyle: {
+          color: isDarkEnabled ? 'lightgrey' : 'black',
+          fontSize: 15,
+        },
+        headerTintColor: isDarkEnabled ? 'lightgrey' : 'black',
       }}>
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{headerShown: false}}
+      />
       <Stack.Screen name="FeedScreen" component={FeedScreen} />
-      <Stack.Screen name="SingleTweet" component={SingleTweet} />
-      <Stack.Screen name="TweetContainer" component={TweetContainer} />
-      <Stack.Screen name="TweetDetailScreen" component={TweetDetailScreen} />
+      <Stack.Screen name="Tweet" component={TweetDetailScreen} />
     </Stack.Navigator>
   );
 };
