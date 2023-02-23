@@ -1,14 +1,6 @@
 import React, {useContext} from 'react';
-import {
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  TouchableHighlight,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import {Text, View, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import ColorThemeContext from '../app/context/ColorThemeContext';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useNavigation} from '@react-navigation/native';
 import IconsContainer from './IconsContainer';
 
@@ -16,57 +8,37 @@ const SingleTweet = ({item, profileImage, name, userName}) => {
   const {isDarkEnabled} = useContext(ColorThemeContext);
   const {navigate} = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigate('Tweet', item)}>
-      <View
-        style={{
-          paddingLeft: 10,
-          paddingRight: 10,
-        }}>
+    <TouchableOpacity
+      onPress={() => navigate('Tweet', {item, profileImage, name, userName})}>
+      <View style={styles.container}>
         <View style={{flexDirection: 'row'}}>
-          <Image
-            source={{uri: profileImage}}
-            style={{height: 50, width: 50, borderRadius: 25}}
-          />
+          <Image source={{uri: profileImage}} style={styles.image} />
           <View style={{flexDirection: 'row', marginLeft: 5}}>
             <Text
-              style={{
-                fontSize: 14,
-                fontWeight: 'bold',
-                color: isDarkEnabled ? 'darkgrey' : '#000',
-              }}>
+              style={[
+                {color: isDarkEnabled ? 'darkgrey' : '#000'},
+                styles.name,
+              ]}>
               {name}
             </Text>
             <Text
-              style={{
-                marginLeft: 5,
-                fontSize: 14,
-                color: isDarkEnabled ? 'grey' : '#000',
-              }}>
+              style={[
+                {color: isDarkEnabled ? 'grey' : '#000'},
+                styles.username,
+              ]}>
               {userName}
             </Text>
           </View>
         </View>
-        <View style={{marginLeft: 54, top: -30}}>
+        <View style={styles.contentContainer}>
           <Text style={{color: isDarkEnabled ? 'grey' : '#000'}}>
             {item.content}
           </Text>
-          <TouchableOpacity
-            style={{
-              flex: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginRight: 50,
-              marginTop: 5,
-            }}>
+          <TouchableOpacity style={styles.uploadImageContainer}>
             {item.uploadedImage && (
               <Image
                 source={{uri: item.uploadedImage}}
-                style={{
-                  height: 150,
-                  width: '100%',
-                  borderRadius: 5,
-                  overflow: 'hidden',
-                }}
+                style={styles.uploadImage}
               />
             )}
           </TouchableOpacity>
@@ -110,25 +82,65 @@ const SingleTweet = ({item, profileImage, name, userName}) => {
             <IconsContainer
               iconName="google-analytics"
               iconSize={18}
-              iconStyle={{color: 'black'}}
+              iconStyle={{color: isDarkEnabled ? 'darkgrey' : 'black'}}
               textName={item.impression}
               textStyle={{
                 marginLeft: 3,
-                color: 'black',
+                color: isDarkEnabled ? 'darkgrey' : 'black',
               }}
             />
           </View>
         </View>
       </View>
       <View
-        style={{
-          width: '100%',
-          borderBottomWidth: 0.2,
-          top: -20,
-          borderBottomColor: isDarkEnabled ? 'lightgrey' : 'grey',
-        }}></View>
+        style={[
+          {borderBottomColor: isDarkEnabled ? 'lightgrey' : 'grey'},
+          styles.seperator,
+        ]}></View>
     </TouchableOpacity>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+  image: {
+    height: 50,
+    width: 50,
+    borderRadius: 25,
+  },
+  name: {
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  username: {
+    marginLeft: 5,
+    fontSize: 14,
+  },
+  contentContainer: {
+    marginLeft: 54,
+    top: -30,
+  },
+  uploadImageContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 50,
+    marginTop: 5,
+  },
+  uploadImage: {
+    height: 150,
+    width: '100%',
+    borderRadius: 5,
+    overflow: 'hidden',
+  },
+  seperator: {
+    width: '100%',
+    borderBottomWidth: 0.2,
+    top: -20,
+  },
+});
 
 export default SingleTweet;
