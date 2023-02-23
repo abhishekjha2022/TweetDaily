@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import {Switch, View, Platform} from 'react-native';
 import ColorThemeContext from '../app/context/ColorThemeContext';
 
