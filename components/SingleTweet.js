@@ -10,6 +10,7 @@ import {
 import ColorThemeContext from '../app/context/ColorThemeContext';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useNavigation} from '@react-navigation/native';
+import IconsContainer from './IconsContainer';
 
 const SingleTweet = ({item, profileImage, name, userName}) => {
   const {isDarkEnabled} = useContext(ColorThemeContext);
@@ -77,43 +78,45 @@ const SingleTweet = ({item, profileImage, name, userName}) => {
               justifyContent: 'space-between',
               marginRight: 30,
             }}>
-            <TouchableOpacity style={{flexDirection: 'row'}}>
-              <Icon name="cards-heart" size={18} style={{color: 'darkgrey'}} />
-              <Text style={{fontSize: 13, marginLeft: 3, color: 'darkgrey'}}>
-                {item.likesBy.length}
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={{flexDirection: 'row'}}>
-              <Icon
-                name="comment-multiple"
-                size={18}
-                style={{color: 'darkgrey'}}
-              />
-              <Text style={{fontSize: 13, marginLeft: 3, color: 'darkgrey'}}>
-                {item.commentsBy.length}
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={{flexDirection: 'row'}}>
-              <Icon name="share" size={18} style={{color: 'darkgrey'}} />
-              <Text style={{fontSize: 13, marginLeft: 3, color: 'darkgrey'}}>
-                {item.commentsBy.length}
-              </Text>
-            </TouchableOpacity>
-            <View style={{flexDirection: 'row'}}>
-              <Icon
-                name="google-analytics"
-                size={18}
-                style={{color: isDarkEnabled ? 'darkgrey' : 'black'}}
-              />
-              <Text
-                style={{
-                  fontSize: 13,
-                  marginLeft: 3,
-                  color: isDarkEnabled ? 'darkgrey' : 'black',
-                }}>
-                {item.impression}
-              </Text>
-            </View>
+            <IconsContainer
+              iconName="cards-heart"
+              iconSize={18}
+              textName={item.likesBy.length}
+              textStyle={{
+                marginLeft: 3,
+                color: 'darkgrey',
+              }}
+            />
+            <IconsContainer
+              iconName="comment-multiple"
+              iconSize={18}
+              textName={item.commentsBy.length}
+              textStyle={{
+                marginLeft: 3,
+                color: 'darkgrey',
+              }}
+            />
+
+            <IconsContainer
+              iconName="share"
+              iconSize={18}
+              textName={item.likesBy.length}
+              textStyle={{
+                marginLeft: 3,
+                color: 'darkgrey',
+              }}
+            />
+
+            <IconsContainer
+              iconName="google-analytics"
+              iconSize={18}
+              iconStyle={{color: 'black'}}
+              textName={item.impression}
+              textStyle={{
+                marginLeft: 3,
+                color: 'black',
+              }}
+            />
           </View>
         </View>
       </View>

@@ -1,8 +1,6 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import {useContext} from 'react';
 import ColorThemeContext from '../app/context/ColorThemeContext';
-import SingleTweet from '../components/SingleTweet';
-import TweetContainer from '../components/TweetContainer';
 import FeedScreen from '../screens/FeedScreen';
 import HomeScreen from '../screens/HomeScreen';
 import TweetDetailScreen from '../screens/TweetDetailScreen';
@@ -15,6 +13,7 @@ const FeedScreenNavigator = () => {
     <Stack.Navigator
       screenOptions={{
         cardStyle: {backgroundColor: isDarkEnabled ? '#000' : '#fff'},
+        headerBackTitleVisible: false,
         headerStyle: {backgroundColor: isDarkEnabled ? '#000' : '#fff'},
         headerTitleStyle: {
           color: isDarkEnabled ? 'lightgrey' : 'black',
