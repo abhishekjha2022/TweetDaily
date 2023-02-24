@@ -1,6 +1,5 @@
 import {View, Text, FlatList} from 'react-native';
 import React from 'react';
-import TweetDetailScreen from '../screens/TweetDetailScreen';
 import TweetHeader from './TweetHeader';
 
 const CommentsList = ({commentsBy}) => {

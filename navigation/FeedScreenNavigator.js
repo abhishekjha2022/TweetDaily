@@ -3,6 +3,7 @@ import {useContext} from 'react';
 import ColorThemeContext from '../app/context/ColorThemeContext';
 import FeedScreen from '../screens/FeedScreen';
 import HomeScreen from '../screens/HomeScreen';
+import PostTweetScreen from '../screens/PostTweetScreen';
 import TweetDetailScreen from '../screens/TweetDetailScreen';
 
 const Stack = createStackNavigator();
@@ -29,6 +30,11 @@ const FeedScreenNavigator = () => {
       />
       <Stack.Screen name="FeedScreen" component={FeedScreen} />
       <Stack.Screen name="Tweet" component={TweetDetailScreen} />
+      <Stack.Screen
+        name="Post Tweet"
+        component={PostTweetScreen}
+        options={{...TransitionPresets.BottomSheetAndroid}}
+      />
     </Stack.Navigator>
   );
 };
