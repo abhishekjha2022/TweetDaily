@@ -1,4 +1,4 @@
-import {createStackNavigator} from '@react-navigation/stack';
+import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 import {useContext} from 'react';
 import ColorThemeContext from '../app/context/ColorThemeContext';
 import FeedScreen from '../screens/FeedScreen';
@@ -12,6 +12,7 @@ const FeedScreenNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{
+        ...TransitionPresets.SlideFromRightIOS,
         cardStyle: {backgroundColor: isDarkEnabled ? '#000' : '#fff'},
         headerBackTitleVisible: false,
         headerStyle: {backgroundColor: isDarkEnabled ? '#000' : '#fff'},
