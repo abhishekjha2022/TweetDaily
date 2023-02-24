@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 
-const TweetIcon = () => {
+const TweetIcon = ({onPress}) => {
   return (
     <TouchableOpacity
       style={{
@@ -11,13 +11,23 @@ const TweetIcon = () => {
         padding: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        top:-80,
-        display:'flex',
-        marginLeft:'auto',
-        marginRight:20,
-        borderRadius:25,
-      }}>
-      <Text style={{fontSize:30, color:'#fff', textAlign:'center', top:-5, fontWeight:'bold'}}>+</Text>
+        top: -80,
+        display: 'flex',
+        marginLeft: 'auto',
+        marginRight: 20,
+        borderRadius: 25,
+      }}
+      onPress={onPress}>
+      <Text
+        style={{
+          fontSize: 30,
+          color: '#fff',
+          textAlign: 'center',
+          top: -5,
+          fontWeight: 'bold',
+        }}>
+        +
+      </Text>
     </TouchableOpacity>
   );
 };
