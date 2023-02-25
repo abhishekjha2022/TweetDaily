@@ -5,6 +5,7 @@ import FeedScreen from '../screens/FeedScreen';
 import HomeScreen from '../screens/HomeScreen';
 import PostTweetScreen from '../screens/PostTweetScreen';
 import TweetDetailScreen from '../screens/TweetDetailScreen';
+import BottomTabNavigator from './BottomTabNavigator';
 
 const Stack = createStackNavigator();
 
@@ -25,7 +26,7 @@ const FeedScreenNavigator = () => {
       }}>
       <Stack.Screen
         name="HomeScreen"
-        component={HomeScreen}
+        component={BottomTabNavigator}
         options={{headerShown: false}}
       />
       <Stack.Screen name="FeedScreen" component={FeedScreen} />
