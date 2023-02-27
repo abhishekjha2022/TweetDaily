@@ -11,7 +11,7 @@ const TweetIcon = ({onPress}) => {
         padding: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        top: -80,
+        top: -20,
         display: 'flex',
         marginLeft: 'auto',
         marginRight: 20,

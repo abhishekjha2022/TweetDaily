@@ -13,19 +13,24 @@ const BottomTabNavigator = () => (
       name="Homescreen"
       component={HomeScreen}
       options={{
+        headerShown: false,
         tabBarLabel: 'Home',
         tabBarIcon: ({color, size}) => (
           <MaterialCommunityIcons name="home" color={color} size={size} />
         ),
       }}
     />
-     <Tab.Screen
+    <Tab.Screen
       name="Search"
       component={SearchScreen}
       options={{
         tabBarLabel: 'Search',
         tabBarIcon: ({color, size}) => (
-          <MaterialCommunityIcons name="search" color={color} size={size} />
+          <MaterialCommunityIcons
+            name="account-search"
+            color={color}
+            size={size}
+          />
         ),
       }}
     />

@@ -10,7 +10,7 @@ const FeedScreen = () => {
   const {navigate} = useNavigation();
   const profileImage = data[0].profileImage;
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <View>
       <Header profileImage={profileImage} name={data[0].name} />
       <FlatList
         data={data}
@@ -18,7 +18,7 @@ const FeedScreen = () => {
         renderItem={({item}) => <TweetContainer item={item} />}
       />
       <TweetIcon onPress={() => navigate('Post Tweet', profileImage)} />
-    </SafeAreaView>
+    </View>
   );
 };
 
