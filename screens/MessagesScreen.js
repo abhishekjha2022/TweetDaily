@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-const MessageScreen = () => {
+const MessagesScreen = () => {
   return (
     <View>
-      <Text>This is message screen</Text>
+      <Text>This is Messages screen</Text>
     </View>
   );
 };
-export default MessageScreen;
+export default MessagesScreen;

@@ -17,7 +17,6 @@ const FeedScreen = () => {
         keyExtractor={data => data.userId}
         renderItem={({item}) => <TweetContainer item={item} />}
       />
-      <TweetIcon onPress={() => navigate('Post Tweet', profileImage)} />
     </View>
   );
 };
