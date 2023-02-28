@@ -1,9 +1,10 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
-import TweetDetailScreen from '../screens/TweetDetailScreen';
-import FeedScreenNavigator from './FeedScreenNavigator';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import SearchScreen from '../screens/SearchScreen';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import NotificationScreen from '../screens/NotificationScreen';
+import MessagesScreen from '../screens/MessagesScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,6 +29,30 @@ const BottomTabNavigator = () => (
         tabBarIcon: ({color, size}) => (
           <MaterialCommunityIcons
             name="account-search"
+            color={color}
+            size={size}
+          />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Notificaton"
+      component={NotificationScreen}
+      options={{
+        tabBarLabel: 'Notification',
+        tabBarIcon: ({color, size}) => (
+          <MaterialIcons name="notifications-on" color={color} size={size} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Messages"
+      component={MessagesScreen}
+      options={{
+        tabBarLabel: 'Messages',
+        tabBarIcon: ({color, size}) => (
+          <MaterialCommunityIcons
+            name="message-text"
             color={color}
             size={size}
           />
