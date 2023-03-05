@@ -2,8 +2,9 @@ import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 import {useContext} from 'react';
 import ColorThemeContext from '../app/context/ColorThemeContext';
 import FeedScreen from '../screens/FeedScreen';
-import HomeScreen from '../screens/HomeScreen';
+import MessagesScreen from '../screens/MessagesScreen';
 import PostTweetScreen from '../screens/PostTweetScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 import TweetDetailScreen from '../screens/TweetDetailScreen';
 import BottomTabNavigator from './BottomTabNavigator';
 
