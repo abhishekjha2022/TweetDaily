@@ -14,7 +14,14 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const DrawerContent = props => {
   return (
-    <SafeAreaView style={{flex: 1, marginLeft: '5%', marginRight: '5%'}}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        marginLeft: '5%',
+        marginRight: '5%',
+        marginTop: '5%',
+        marginBottom: '5%',
+      }}>
       <View
         style={{
           flexDirection: 'row',
@@ -29,20 +36,27 @@ const DrawerContent = props => {
           <MaterialCommunityIcons
             name="dots-vertical-circle-outline"
             size={20}
+            color="black"
           />
         </TouchableOpacity>
       </View>
       <View style={{marginBottom: 20}}>
-        <Text style={{fontSize: 16, fontWeight: 'bold'}}>{data[0].name}</Text>
+        <Text style={{fontSize: 16, fontWeight: 'bold', color: '#000'}}>
+          {data[0].name}
+        </Text>
         <Text style={{color: 'darkgrey'}}>{data[0].userName}</Text>
       </View>
       <View style={{flexDirection: 'row'}}>
         <TouchableOpacity style={{flexDirection: 'row'}}>
-          <Text style={{marginRight: 5}}>{data[0].FollowedByMe.length}</Text>
+          <Text style={{marginRight: 5, color: '#000'}}>
+            {data[0].FollowedByMe.length}
+          </Text>
           <Text style={{color: 'darkgrey'}}>Following</Text>
         </TouchableOpacity>
         <TouchableOpacity style={{marginLeft: 20, flexDirection: 'row'}}>
-          <Text style={{marginRight: 5}}>{data[0].myFollowers.length}</Text>
+          <Text style={{marginRight: 5, color: '#000'}}>
+            {data[0].myFollowers.length}
+          </Text>
           <Text style={{color: 'darkgrey'}}>Followers</Text>
         </TouchableOpacity>
       </View>
@@ -61,8 +75,14 @@ const DrawerContent = props => {
             alignItems: 'center',
             marginBottom: 25,
           }}>
-          <AntDesign name="user" size={20} />
-          <Text style={{fontSize: 20, fontWeight: 'bold', marginLeft: 15}}>
+          <AntDesign name="user" size={20} color="black" />
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              marginLeft: 15,
+              color: '#000',
+            }}>
             Profile
           </Text>
         </TouchableOpacity>
@@ -72,8 +92,14 @@ const DrawerContent = props => {
             alignItems: 'center',
             marginBottom: 25,
           }}>
-          <MaterialIcons name="topic" size={20} />
-          <Text style={{fontSize: 20, fontWeight: 'bold', marginLeft: 15}}>
+          <MaterialIcons name="topic" size={20} color="black" />
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              marginLeft: 15,
+              color: '#000',
+            }}>
             Topics
           </Text>
         </TouchableOpacity>
@@ -83,8 +109,14 @@ const DrawerContent = props => {
             alignItems: 'center',
             marginBottom: 25,
           }}>
-          <MaterialIcons name="bookmarks" size={20} />
-          <Text style={{fontSize: 20, fontWeight: 'bold', marginLeft: 15}}>
+          <MaterialIcons name="bookmarks" size={20} color="black" />
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              marginLeft: 15,
+              color: '#000',
+            }}>
             Bookmarks
           </Text>
         </TouchableOpacity>
@@ -94,8 +126,18 @@ const DrawerContent = props => {
             alignItems: 'center',
             marginBottom: 25,
           }}>
-          <MaterialCommunityIcons name="notebook-outline" size={20} />
-          <Text style={{fontSize: 20, fontWeight: 'bold', marginLeft: 15}}>
+          <MaterialCommunityIcons
+            name="notebook-outline"
+            size={20}
+            color="black"
+          />
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              marginLeft: 15,
+              color: '#000',
+            }}>
             Lists
           </Text>
         </TouchableOpacity>
@@ -105,8 +147,18 @@ const DrawerContent = props => {
             alignItems: 'center',
             marginBottom: 25,
           }}>
-          <MaterialCommunityIcons name="account-heart-outline" size={20} />
-          <Text style={{fontSize: 20, fontWeight: 'bold', marginLeft: 15}}>
+          <MaterialCommunityIcons
+            name="account-heart-outline"
+            size={20}
+            color="black"
+          />
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              marginLeft: 15,
+              color: '#000',
+            }}>
             TweetDaily Circle
           </Text>
         </TouchableOpacity>
@@ -119,20 +171,26 @@ const DrawerContent = props => {
           marginTop: 10,
           marginVertical: 40,
         }}></View>
-        <View style={{}}>
-          <TouchableOpacity style={{marginBottom:20}}>
-            <Text style={{fontSize:17, fontWeight:'bold', color:'grey'}}>Connect With Developer</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={{marginBottom:20}}>
-            <Text style={{fontSize:17, fontWeight:'bold', color:'grey'}}>Github Link of this App</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={{fontSize:17, fontWeight:'bold', color:'grey'}}>Have a look to backend code</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={{marginTop:'auto'}}>
-            <Text>Developed with ❤️ by Abhishek Jha</Text>
-        </View>
+      <View style={{}}>
+        <TouchableOpacity style={{marginBottom: 20}}>
+          <Text style={{fontSize: 17, fontWeight: 'bold', color: 'grey'}}>
+            Connect With Developer
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={{marginBottom: 20}}>
+          <Text style={{fontSize: 17, fontWeight: 'bold', color: 'grey'}}>
+            Github Link of this App
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={{marginBottom: 20}}>
+          <Text style={{fontSize: 17, fontWeight: 'bold', color: 'grey'}}>
+            Have a look to backend code
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <View style={{marginTop: 'auto'}}>
+        <Text style={{color: '#000'}}>Developed with ❤️ by Abhishek Jha</Text>
+      </View>
     </SafeAreaView>
   );
 };

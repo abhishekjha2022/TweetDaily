@@ -5,12 +5,13 @@ const TweetIcon = ({onPress}) => {
   return (
     <TouchableOpacity
       style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
         height: 50,
         width: 50,
         backgroundColor: '#1DA1F2',
         padding: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
         top: -20,
         display: 'flex',
         marginLeft: 'auto',
@@ -22,8 +23,7 @@ const TweetIcon = ({onPress}) => {
         style={{
           fontSize: 30,
           color: '#fff',
-          textAlign: 'center',
-          top: -5,
+          bottom: '17%',
           fontWeight: 'bold',
         }}>
         +
