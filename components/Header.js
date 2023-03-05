@@ -1,9 +1,11 @@
+import {DrawerActions, useNavigation} from '@react-navigation/native';
 import React, {useContext} from 'react';
-import {View, Text, Image, SafeAreaView} from 'react-native';
+import {View, Text, Image, SafeAreaView, TouchableOpacity} from 'react-native';
 import ColorThemeContext from '../app/context/ColorThemeContext';
 import ColorTheme from './ColorTheme';
 
-const Header = ({profileImage, name}) => {
+const Header = ({profileImage, name, onPress}) => {
+  const {dispatch} = useNavigation();
   const {isDarkEnabled} = useContext(ColorThemeContext);
   return (
     <>
@@ -22,12 +24,13 @@ const Header = ({profileImage, name}) => {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            <View>
+            <TouchableOpacity
+              onPress={() => dispatch(DrawerActions.openDrawer())}>
               <Image
                 source={{uri: profileImage}}
                 style={{height: 30, width: 30, borderRadius: 25}}
               />
-            </View>
+            </TouchableOpacity>
             <Text
               style={{
                 marginLeft: 5,
